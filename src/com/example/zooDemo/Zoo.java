@@ -32,7 +32,7 @@ public class Zoo {
         return zooKeeperChoice;
     }
 
-    public static void takeZooKeeperChoice()
+    public static void takeZooKeeperChoice(zooKeeperChoice)
     {
         boolean quit = false;
 
@@ -41,37 +41,37 @@ public class Zoo {
             switch (zooKeeperChoice) {
                 case 1:
                     System.out.println();
-                    checkNumberOfBooks();
+                    setUpPens();
                     System.out.println();
                     break;
                 case 2:
                     System.out.println();
-                    addNewBook(user);
+                    removePens(zooKeeper);
                     System.out.println();
                     break;
                 case 3:
                     System.out.println();
-                    searchBook(user);
+                    addAnimaltoPen(zooKeeper);
                     System.out.println();
                     break;
                 case 4:
                     System.out.println();
-                    deleteBook(user);
+                    addBabyAnimaltoPen(zooKeeper);
                     System.out.println();
                     break;
                 case 5:
                     System.out.println();
-                    changeBookInfo(user);
+                    removeAnimalsOrBabyAnimalsFromPen(zooKeeper);
                     System.out.println();
                     break;
                 case 6:
                     System.out.println();
-                    changeBookInfo(user);
+                    displayAnimalsInPen(zooKeeper);
                     System.out.println();
                     break;
                 case 7:
                     System.out.println();
-                    changeBookInfo(user);
+                    displayAnimalsInZoo(zooKeeper);
                     System.out.println();
                     break;
                 case 8:
