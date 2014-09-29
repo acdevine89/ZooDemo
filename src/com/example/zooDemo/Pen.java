@@ -7,13 +7,13 @@ import java.util.List;
  */
 public class Pen {
 
-    private ArrayList<Animal> allTheAnimals = new ArrayList<Animal>();
-    private ArrayList<BabyAnimal> allTheBabyAnimals = new ArrayList<BabyAnimal>();
+    private ArrayList<Animal> allTheAnimals;
+    private ArrayList<BabyAnimal> allTheBabyAnimals;
 
     public Pen()
     {
-        allTheAnimals = new List<Animal>();
-        allTheBabyAnimals = ;
+        allTheAnimals = new ArrayList<Animal>();
+        allTheBabyAnimals = new ArrayList<BabyAnimal>();
     }
 
     public List<Animal> getAllTheAnimals() {
