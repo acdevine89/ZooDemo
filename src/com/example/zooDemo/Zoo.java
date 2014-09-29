@@ -91,6 +91,33 @@ public class Zoo {
 
     public static void setUpPens()
     {
+        boolean quit = false;
+        Scanner zooKeeper = new Scanner(System.in);
+        int zooKeeperChoice;
+
+        System.out.println("Set up regular animal pen, or baby animal pen?");
+        System.out.println("1 - Regular animal pen");
+        System.out.println("2 - Baby animal pen");
+        System.out.println("3 - I changed my mind... Go back to main menu");
+        System.out.print("Enter menu selection by typing number here: ");
+        //checkIfIntMainMenu(zooKeeperChoice);
+        zooKeeperChoice = zooKeeper.nextInt();
+        zooKeeper.nextLine();
+
+        do {
+            switch(zooKeeperChoice) {
+                case 1:
+                case 2:
+                case 3:
+                    quit = true;
+                    break;
+                default:
+                    System.out.println();
+                    System.out.println("Invalid choice. Please enter 1, 2 or 3.");
+                    System.out.println();
+            }
+        }while(!quit);
+
 
     }
 
