@@ -7,9 +7,32 @@ import java.util.List;
  */
 public class Pen {
 
-    List<Animal> allTheAnimals = new ArrayList<Animal>();
-    List<BabyAnimal> allTheBabyAnimals = new ArrayList<BabyAnimal>();
+    private List<Animal> allTheAnimals = new ArrayList<Animal>();
+    private List<BabyAnimal> allTheBabyAnimals = new ArrayList<BabyAnimal>();
 
-    //Pen newPen = new Pen();
+    public Pen(List allTheAnimals)
+    {
+        this.allTheAnimals = allTheAnimals;
+    }
 
+    public Pen(List allTheBabyAnimals)
+    {
+        this.allTheBabyAnimals = allTheBabyAnimals;
+    }
+
+    public List<Animal> getAllTheAnimals() {
+        return allTheAnimals;
+    }
+
+    public void setAllTheAnimals(List<Animal> allTheAnimals) {
+        this.allTheAnimals = allTheAnimals;
+    }
+
+    public List<BabyAnimal> getAllTheBabyAnimals() {
+        return allTheBabyAnimals;
+    }
+
+    public void setAllTheBabyAnimals(List<BabyAnimal> allTheBabyAnimals) {
+        this.allTheBabyAnimals = allTheBabyAnimals;
+    }
 }

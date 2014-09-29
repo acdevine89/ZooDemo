@@ -10,7 +10,7 @@ public class Zoo {
 
     List<Pen> allThePens = new ArrayList<Pen>();
 
-    public int printMenuOptions()
+    public static int mainMenu()
     {
         Scanner zooKeeper = new Scanner(System.in);
         int zooKeeperChoice;
@@ -29,18 +29,14 @@ public class Zoo {
         zooKeeperChoice = zooKeeper.nextInt();
         zooKeeper.nextLine();
         return zooKeeperChoice;
-    }
 
-    public static void takeZooKeeperChoice(zooKeeperChoice)
-    {
         boolean quit = false;
 
         do {
-            printMenuOptions();
             switch (zooKeeperChoice) {
                 case 1:
                     System.out.println();
-                    setUpPens();
+                    setUpPens(zooKeeper);
                     System.out.println();
                     break;
                 case 2:
@@ -88,10 +84,9 @@ public class Zoo {
         System.out.println("Goodbye!");
     }
 
-    public static void setUpPens()
+    public void setUpPens(Scanner zooKeeper)
     {
         boolean quit = false;
-        Scanner zooKeeper = new Scanner(System.in);
         int zooKeeperChoice;
 
         System.out.println("Set up regular animal pen, or baby animal pen?");
@@ -110,7 +105,7 @@ public class Zoo {
 //                    System.out.print("New animal pen is being set up! Give it a name: ");
 //                    String newPenName = zooKeeper.nextLine();
 //                    zooKeeper.nextLine();
-                    List newAnimalPen = new ArrayList<Animal>();
+                    List newAnimalPen = new ArrayList<Pen>();
                     allThePens.add(newAnimalPen);
                     System.out.println("New animal pen has been set up!");
                     System.out.println();
@@ -131,29 +126,13 @@ public class Zoo {
         }while(!quit);
     }
 
-    public static void removePens()
+    public void removePens(Scanner zooKeeper)
     {
-        Scanner zooKeeper = new Scanner(System.in);
-
-        for(Pen thisPen : allThePens)
-        {
-            System.out.println(thisPen.getPenName);
-        }
-        System.out.print("Pens are listed above by name. Type the name of the pen you would like to remove: ");
-        String penToRemove = zooKeeper.nextLine();
-        zooKeeper.nextLine();
-
-        if(penToRemove.equalsIgnoreCase(thisPen.getPenName))
-        {
-            allThePens.remove(thisPen.getPen());
-        }
-        else
-        {
-            System.out.println("Sorry, that's not a valid pen name.");
-        }
+        selectAPen();
+        allThePens.remove();
     }
 
-    public static void addAnimaltoPen()
+    public static void addAnimaltoPen(Scanner zooKeeper)
     {
         Scanner zooKeeper = new Scanner(System.in);
         Animal newAnimal;
@@ -176,8 +155,9 @@ public class Zoo {
 
     }
 
-    public static void addBabyAnimaltoPen()
+    public static void addBabyAnimaltoPen(Scanner zooKeeper)
     {
+        selectAPen();
         Scanner zooKeeper = new Scanner(System.in);
         BabyAnimal newBabyAnimal;
 
@@ -218,19 +198,49 @@ public class Zoo {
         System.out.println("Animal has been added to the pen!");
     }
 
-    public static void removeAnimalsOrBabyAnimalsFromPen()
+    public static void removeAnimalsOrBabyAnimalsFromPen(Scanner zooKeeper)
     {
+        Scanner zooKeeper = new Scanner(System.in);
 
     }
 
-    public static void displayAnimalsInPen()
+    public static void displayAnimalsInPen(Scanner zooKeeper)
     {
-
+        for(Pen thisPen : allThePens)
+        {
+            System.out.println(thisPen.getAllTheAnimals());
+            System.out.println(thisPen.getAllTheBabyAnimals());
+        }
     }
 
-    public static void displayAnimalsInZoo()
+    public static void displayAnimalsInZoo(Scanner zooKeeper)
     {
-
+       for(Pen thisPen : allThePens)
+       {
+           System.out.println(thisPen.getAllTheAnimals());
+           System.out.println(thisPen.getAllTheBabyAnimals());
+       }
     }
 
+    public void selectAPen()
+    {
+        Scanner zooKeeper = new Scanner(System.in);
+
+        for(List thisPen : allThePens)
+        {
+            System.out.println(thisPen.getPenName);
+        }
+        System.out.print("Pens are listed above by name. Select pen by typing its name: ");
+        String selectedPen = zooKeeper.nextLine();
+        zooKeeper.nextLine();
+
+        if(selectedPen.equalsIgnoreCase(thisPen.getPenName))
+        {
+            return allThePens.thisPen.getPen();
+        }
+        else
+        {
+            System.out.println("Sorry, that's not a valid pen name.");
+        }
+    }
 }
