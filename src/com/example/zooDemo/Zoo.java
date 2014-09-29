@@ -10,7 +10,6 @@ public class Zoo {
 
     List<Pen> allThePens = new ArrayList<Pen>();
 
-
     public int printMenuOptions()
     {
         Scanner zooKeeper = new Scanner(System.in);
@@ -108,11 +107,18 @@ public class Zoo {
             switch(zooKeeperChoice) {
                 case 1:
                     System.out.println();
+//                    System.out.print("New animal pen is being set up! Give it a name: ");
+//                    String newPenName = zooKeeper.nextLine();
+//                    zooKeeper.nextLine();
                     List newAnimalPen = new ArrayList<Animal>();
+                    allThePens.add(newAnimalPen);
+                    System.out.println("New animal pen has been set up!");
                     System.out.println();
                 case 2:
                     System.out.println();
                     List newBabyAnimalPen = new ArrayList<BabyAnimal>();
+                    allThePens.add(newBabyAnimalPen);
+                    System.out.println("New baby animal pen has been set up!");
                     System.out.println();
                 case 3:
                     quit = true;
@@ -127,7 +133,24 @@ public class Zoo {
 
     public static void removePens()
     {
+        Scanner zooKeeper = new Scanner(System.in);
 
+        for(Pen thisPen : allThePens)
+        {
+            System.out.println(thisPen.getPenName);
+        }
+        System.out.print("Pens are listed above by name. Type the name of the pen you would like to remove: ");
+        String penToRemove = zooKeeper.nextLine();
+        zooKeeper.nextLine();
+
+        if(penToRemove.equalsIgnoreCase(thisPen.getPenName))
+        {
+            allThePens.remove(thisPen.getPen());
+        }
+        else
+        {
+            System.out.println("Sorry, that's not a valid pen name.");
+        }
     }
 
     public static void addAnimaltoPen()
