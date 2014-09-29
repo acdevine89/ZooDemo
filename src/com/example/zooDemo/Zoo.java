@@ -1,6 +1,7 @@
 package com.example.zooDemo;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by anniedevine on 9/29/14.
@@ -8,5 +9,9 @@ import java.util.List;
 public class Zoo {
 
     List<Pen> allThePens = new ArrayList<Pen>();
+    Scanner zooKeeper = new Scanner(System.in);
+
+
+
 
 }
