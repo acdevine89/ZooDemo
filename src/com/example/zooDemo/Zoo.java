@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Zoo {
 
-    List<Pen> allThePens = new ArrayList<Pen>();
+    ArrayList<Pen> allThePens = new ArrayList<Pen>();
 
     public static int mainMenu()
     {
@@ -105,13 +105,13 @@ public class Zoo {
 //                    System.out.print("New animal pen is being set up! Give it a name: ");
 //                    String newPenName = zooKeeper.nextLine();
 //                    zooKeeper.nextLine();
-                    List<Pen> newAnimalPen = new ArrayList<Pen>();
+                    ArrayList<Pen> newAnimalPen = new ArrayList<Pen>();
                     allThePens.add(newAnimalPen);
                     System.out.println("New animal pen has been set up!");
                     System.out.println();
                 case 2:
                     System.out.println();
-                    List newBabyAnimalPen = new ArrayList<BabyAnimal>();
+                    ArrayList newBabyAnimalPen = new ArrayList<BabyAnimal>();
                     allThePens.add(newBabyAnimalPen);
                     System.out.println("New baby animal pen has been set up!");
                     System.out.println();
@@ -226,7 +226,7 @@ public class Zoo {
     {
         Scanner zooKeeper = new Scanner(System.in);
 
-        for(List thisPen : allThePens)
+        for(ArrayList thisPen : allThePens)
         {
             System.out.println(thisPen.getPenName);
         }
