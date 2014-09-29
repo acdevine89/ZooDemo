@@ -107,7 +107,13 @@ public class Zoo {
         do {
             switch(zooKeeperChoice) {
                 case 1:
+                    System.out.println();
+                    List newAnimalPen = new ArrayList<Animal>();
+                    System.out.println();
                 case 2:
+                    System.out.println();
+                    List newBabyAnimalPen = new ArrayList<BabyAnimal>();
+                    System.out.println();
                 case 3:
                     quit = true;
                     break;
@@ -117,8 +123,6 @@ public class Zoo {
                     System.out.println();
             }
         }while(!quit);
-
-
     }
 
     public static void removePens()
