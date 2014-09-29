@@ -5,13 +5,19 @@ package com.example.zooDemo;
  */
 public class BabyAnimal extends Animal {
 
-    private boolean hasSiblingsOrNot;
+    private boolean hasSiblings;
 
-    public BabyAnimal(boolean hasSiblingsOrNot, String species, int size, char gender)
+    public BabyAnimal(boolean hasSiblings, String species, int size, String gender)
     {
         super(species, size, gender);
-        this.hasSiblingsOrNot = hasSiblingsOrNot;
+        this.hasSiblings = hasSiblings;
     }
 
+    public boolean getHasSiblings() {
+        return hasSiblings;
+    }
 
+    public void setHasSiblings(boolean hasSiblings) {
+        this.hasSiblings = hasSiblings;
+    }
 }

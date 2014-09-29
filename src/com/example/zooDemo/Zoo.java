@@ -155,12 +155,67 @@ public class Zoo {
 
     public static void addAnimaltoPen()
     {
+        Scanner zooKeeper = new Scanner(System.in);
+        Animal newAnimal;
+
+        System.out.print("What is the animal's species? ");
+        String animalSpecies = zooKeeper.nextLine();
+
+        System.out.print("What is the animal's size? Type 1 for small, 2 for medium, 3 for large: ");
+        int animalSize = zooKeeper.nextInt();
+
+        System.out.print("What is the animal's gender? ");
+        String animalGender = zooKeeper.nextLine();
+
+        newAnimal = new Animal(animalSpecies, animalSize, animalGender);
+        newAnimal.setSpecies(animalSpecies);
+        newAnimal.setSize(animalSize);
+        newAnimal.setGender(animalGender);
+
+        System.out.println("Animal has been added to the pen!");
 
     }
 
     public static void addBabyAnimaltoPen()
     {
+        Scanner zooKeeper = new Scanner(System.in);
+        BabyAnimal newBabyAnimal;
 
+        System.out.print("What is the animal's species? ");
+        String animalSpecies = zooKeeper.nextLine();
+
+        System.out.print("What is the animal's size? Type 1 for small, 2 for medium, 3 for large: ");
+        int animalSize = zooKeeper.nextInt();
+
+        System.out.print("What is the animal's gender? ");
+        String animalGender = zooKeeper.nextLine();
+
+        System.out.println("Does the animal have siblings? Type 1 for yes, 2 for no: ");
+        int siblingsOrNot = zooKeeper.nextInt();
+        boolean hasSiblings;
+
+        if(siblingsOrNot==1)
+        {
+            hasSiblings = true;
+        }
+
+        if(siblingsOrNot==2)
+        {
+            hasSiblings = false;
+        }
+
+        else
+        {
+            System.out.println("That's not a valid response.");
+        }
+
+        newBabyAnimal = new BabyAnimal(hasSiblings, animalSpecies, animalSize, animalGender);
+        newBabyAnimal.setHasSiblings(hasSiblings);
+        newBabyAnimal.setSpecies(animalSpecies);
+        newBabyAnimal.setSize(animalSize);
+        newBabyAnimal.setGender(animalGender);
+
+        System.out.println("Animal has been added to the pen!");
     }
 
     public static void removeAnimalsOrBabyAnimalsFromPen()
