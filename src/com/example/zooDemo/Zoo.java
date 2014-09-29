@@ -105,7 +105,7 @@ public class Zoo {
 //                    System.out.print("New animal pen is being set up! Give it a name: ");
 //                    String newPenName = zooKeeper.nextLine();
 //                    zooKeeper.nextLine();
-                    List newAnimalPen = new ArrayList<Pen>();
+                    List<Pen> newAnimalPen = new ArrayList<Pen>();
                     allThePens.add(newAnimalPen);
                     System.out.println("New animal pen has been set up!");
                     System.out.println();
