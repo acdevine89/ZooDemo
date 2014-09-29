@@ -9,26 +9,11 @@ import java.util.Scanner;
 public class Zoo {
 
     List<Pen> allThePens = new ArrayList<Pen>();
-    Scanner zooKeeper = new Scanner(System.in);
-    int zooKeeperChoice;
     boolean quit = false;
 
     do {
-        System.out.println("Hello Zookeeper! What would you like to do?");
-        System.out.println("1 - Set up new pens");
-        System.out.println("2 - Remove pens");
-        System.out.println("3 - Add an animal to a pen");
-        System.out.println("4 - Add a baby animal to a pen");
-        System.out.println("5 - Remove animals or baby animals from a pen");
-        System.out.println("6 - Display all the animals in a pen");
-        System.out.println("7 - Display all the animals in the zoo");
-        System.out.println("8 - Leave the zoo. Zookeeping is not for me...");
-        System.out.print("Enter menu selection by typing number here: ");
-        //checkIfIntMainMenu(zooKeeperChoice);
-        zooKeeperChoice = zooKeeper.nextInt();
-        zooKeeper.nextLine();
-
-        switch (userChoice) {
+        printMenuOptions();
+        switch (zooKeeperChoice) {
             case 1:
                 System.out.println();
                 checkNumberOfBooks();
@@ -55,11 +40,21 @@ public class Zoo {
                 System.out.println();
                 break;
             case 6:
+                System.out.println();
+                changeBookInfo(user);
+                System.out.println();
+                break;
+            case 7:
+                System.out.println();
+                changeBookInfo(user);
+                System.out.println();
+                break;
+            case 8:
                 quit = true;
                 break;
             default:
                 System.out.println();
-                System.out.println("Invalid choice. Please enter a number 1 through 6.");
+                System.out.println("Invalid choice. Please enter a number 1 through 8.");
                 System.out.println();
         }
 
@@ -68,5 +63,25 @@ public class Zoo {
     System.out.println();
     System.out.println("Goodbye!");
 
+    public int printMenuOptions()
+    {
+        Scanner zooKeeper = new Scanner(System.in);
+        int zooKeeperChoice;
+
+        System.out.println("Hello Zookeeper! What would you like to do?");
+        System.out.println("1 - Set up new pens");
+        System.out.println("2 - Remove pens");
+        System.out.println("3 - Add an animal to a pen");
+        System.out.println("4 - Add a baby animal to a pen");
+        System.out.println("5 - Remove animals or baby animals from a pen");
+        System.out.println("6 - Display all the animals in a pen");
+        System.out.println("7 - Display all the animals in the zoo");
+        System.out.println("8 - Leave the zoo. Zookeeping is not for me...");
+        System.out.print("Enter menu selection by typing number here: ");
+        //checkIfIntMainMenu(zooKeeperChoice);
+        zooKeeperChoice = zooKeeper.nextInt();
+        zooKeeper.nextLine();
+        return zooKeeperChoice;
+    }
 
 }
