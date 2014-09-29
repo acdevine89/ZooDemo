@@ -6,7 +6,7 @@ package com.example.zooDemo;
 public class Animal {
 
     private String species;
-    private String size;
+    private int size;
     private char gender;
 
 }
