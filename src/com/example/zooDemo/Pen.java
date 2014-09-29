@@ -9,18 +9,20 @@ public class Pen {
 
     private ArrayList<Animal> allTheAnimals;
     private ArrayList<BabyAnimal> allTheBabyAnimals;
+    //private String penName;
 
     public Pen()
     {
         allTheAnimals = new ArrayList<Animal>();
         allTheBabyAnimals = new ArrayList<BabyAnimal>();
+        //penName = ;
     }
 
-    public List<Animal> getAllTheAnimals() {
+    public ArrayList<Animal> getAllTheAnimals() {
         return allTheAnimals;
     }
 
-    public List<BabyAnimal> getAllTheBabyAnimals() {
+    public ArrayList<BabyAnimal> getAllTheBabyAnimals() {
         return allTheBabyAnimals;
     }
 
