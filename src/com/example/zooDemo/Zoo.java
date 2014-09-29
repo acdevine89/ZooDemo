@@ -89,4 +89,39 @@ public class Zoo {
         System.out.println("Goodbye!");
     }
 
+    public static void setUpPens()
+    {
+
+    }
+
+    public static void removePens()
+    {
+
+    }
+
+    public static void addAnimaltoPen()
+    {
+
+    }
+
+    public static void addBabyAnimaltoPen()
+    {
+
+    }
+
+    public static void removeAnimalsOrBabyAnimalsFromPen()
+    {
+
+    }
+
+    public static void displayAnimalsInPen()
+    {
+
+    }
+
+    public static void displayAnimalsInZoo()
+    {
+
+    }
+
 }
