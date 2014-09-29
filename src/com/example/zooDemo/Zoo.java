@@ -9,59 +9,7 @@ import java.util.Scanner;
 public class Zoo {
 
     List<Pen> allThePens = new ArrayList<Pen>();
-    boolean quit = false;
 
-    do {
-        printMenuOptions();
-        switch (zooKeeperChoice) {
-            case 1:
-                System.out.println();
-                checkNumberOfBooks();
-                System.out.println();
-                break;
-            case 2:
-                System.out.println();
-                addNewBook(user);
-                System.out.println();
-                break;
-            case 3:
-                System.out.println();
-                searchBook(user);
-                System.out.println();
-                break;
-            case 4:
-                System.out.println();
-                deleteBook(user);
-                System.out.println();
-                break;
-            case 5:
-                System.out.println();
-                changeBookInfo(user);
-                System.out.println();
-                break;
-            case 6:
-                System.out.println();
-                changeBookInfo(user);
-                System.out.println();
-                break;
-            case 7:
-                System.out.println();
-                changeBookInfo(user);
-                System.out.println();
-                break;
-            case 8:
-                quit = true;
-                break;
-            default:
-                System.out.println();
-                System.out.println("Invalid choice. Please enter a number 1 through 8.");
-                System.out.println();
-        }
-
-    } while (!quit);
-
-    System.out.println();
-    System.out.println("Goodbye!");
 
     public int printMenuOptions()
     {
@@ -82,6 +30,63 @@ public class Zoo {
         zooKeeperChoice = zooKeeper.nextInt();
         zooKeeper.nextLine();
         return zooKeeperChoice;
+    }
+
+    public static void takeZooKeeperChoice()
+    {
+        boolean quit = false;
+
+        do {
+            printMenuOptions();
+            switch (zooKeeperChoice) {
+                case 1:
+                    System.out.println();
+                    checkNumberOfBooks();
+                    System.out.println();
+                    break;
+                case 2:
+                    System.out.println();
+                    addNewBook(user);
+                    System.out.println();
+                    break;
+                case 3:
+                    System.out.println();
+                    searchBook(user);
+                    System.out.println();
+                    break;
+                case 4:
+                    System.out.println();
+                    deleteBook(user);
+                    System.out.println();
+                    break;
+                case 5:
+                    System.out.println();
+                    changeBookInfo(user);
+                    System.out.println();
+                    break;
+                case 6:
+                    System.out.println();
+                    changeBookInfo(user);
+                    System.out.println();
+                    break;
+                case 7:
+                    System.out.println();
+                    changeBookInfo(user);
+                    System.out.println();
+                    break;
+                case 8:
+                    quit = true;
+                    break;
+                default:
+                    System.out.println();
+                    System.out.println("Invalid choice. Please enter a number 1 through 8.");
+                    System.out.println();
+            }
+
+        } while(!quit);
+
+        System.out.println();
+        System.out.println("Goodbye!");
     }
 
 }
