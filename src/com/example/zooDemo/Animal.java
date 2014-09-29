@@ -9,4 +9,11 @@ public class Animal {
     private int size;
     private char gender;
 
+    public Animal(String species, int size, char gender)
+    {
+        this.species = species;
+        this.size = size;
+        this.gender = gender;
+    }
+
 }
