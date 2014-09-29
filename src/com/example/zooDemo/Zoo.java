@@ -10,7 +10,8 @@ public class Zoo {
 
     List<Pen> allThePens = new ArrayList<Pen>();
     Scanner zooKeeper = new Scanner(System.in);
-
+    int zooKeeperChoice;
+    boolean quit = false;
 
 
 
