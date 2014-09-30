@@ -43,11 +43,11 @@ public class ZooDemo {
                     theZoo.addPen();
                     System.out.println();
                     break;
-//                case 2:
-//                    System.out.println();
-//                    theZoo.removePen();
-//                    System.out.println();
-//                    break;
+                case 2:
+                    System.out.println();
+                    removePen();
+                    System.out.println();
+                    break;
 //                case 3:
 //                    System.out.println();
 //                    theZoo.addAnimaltoPen();
@@ -92,6 +92,21 @@ public class ZooDemo {
         return 0;
     }
 
+    public static void removePen()
+    {
+        int i = 1;
+        for(Pen thisPen : theZoo.getAllThePens())
+        {
+            System.out.println((i) + ": " + thisPen.display());
+            ++i;
+        }
+
+        Scanner zooKeeper = new Scanner(System.in);
+        System.out.print("Which pen would you like to remove? Type the number here: ");
+        int zooKeeperChoice = zooKeeper.nextInt();
+        theZoo.getAllThePens().remove(zooKeeperChoice-1);
+        System.out.println("Pen removed.");
+    }
 
 
     public static void addAnimaltoPen()
