@@ -41,6 +41,7 @@ public class ZooDemo {
                 case 1:
                     System.out.println();
                     theZoo.addPen();
+                    System.out.println("Pen has been added!");
                     System.out.println();
                     break;
                 case 2:
@@ -48,11 +49,11 @@ public class ZooDemo {
                     removePen();
                     System.out.println();
                     break;
-//                case 3:
-//                    System.out.println();
-//                    theZoo.addAnimaltoPen();
-//                    System.out.println();
-//                    break;
+                case 3:
+                    System.out.println();
+                    addAnimaltoPen();
+                    System.out.println();
+                    break;
 //                case 4:
 //                    System.out.println();
 //                    theZoo.addBabyAnimaltoPen();
@@ -65,10 +66,7 @@ public class ZooDemo {
 //                    break;
                 case 6:
                     System.out.println();
-                    for(Pen thisPen : theZoo.getAllThePens())
-                    {
-                        System.out.println(thisPen.display());
-                    }
+                    System.out.println(theZoo.display());
                     System.out.println();
                     break;
 //                case 7:
@@ -92,7 +90,7 @@ public class ZooDemo {
         return 0;
     }
 
-    public static void removePen()
+    public static int selectAPen()
     {
         int i = 1;
         for(Pen thisPen : theZoo.getAllThePens())
@@ -102,17 +100,36 @@ public class ZooDemo {
         }
 
         Scanner zooKeeper = new Scanner(System.in);
-        System.out.print("Which pen would you like to remove? Type the number here: ");
+        System.out.print("Which pen would you like to use? Type the number here: ");
         int zooKeeperChoice = zooKeeper.nextInt();
-        theZoo.getAllThePens().remove(zooKeeperChoice-1);
+        return zooKeeperChoice-1;
+    }
+
+    public static void removePen()
+    {
+        theZoo.getAllThePens().remove(selectAPen());
         System.out.println("Pen removed.");
     }
 
 
     public static void addAnimaltoPen()
     {
+        if(theZoo.getAllThePens().size()<=0)
+        {
+            System.out.println("Sorry, no pens. Must add pen first");
+            return;
+        }
+
+        int i = selectAPen();
+
+        if(i<0)
+        {
+            System.out.println("Invalid selection.");
+        }
+
+        Pen thisPen = theZoo.getAllThePens().get(i);
+
         Scanner zooKeeper = new Scanner(System.in);
-        Animal newAnimal;
 
         System.out.print("What is the animal's species? ");
         String animalSpecies = zooKeeper.nextLine();
@@ -123,13 +140,9 @@ public class ZooDemo {
         System.out.print("What is the animal's gender? ");
         String animalGender = zooKeeper.nextLine();
 
-        newAnimal = new Animal(animalSpecies, animalSize, animalGender);
-        newAnimal.setSpecies(animalSpecies);
-        newAnimal.setSize(animalSize);
-        newAnimal.setGender(animalGender);
+        thisPen.getAllTheAnimals().add(new Animal(animalSpecies, animalSize, animalGender));
 
         System.out.println("Animal has been added to the pen!");
-
     }
 
 //    public static void addBabyAnimaltoPen()
@@ -178,5 +191,14 @@ public class ZooDemo {
 //    {
 //        Scanner zooKeeper = new Scanner(System.in);
 //
+//    }
+
+//    public static void displayAnimalsInZoo()
+//    {
+//        for(Pen thisPen : allThePens)
+//        {
+//            System.out.println(thisPen.getAllTheAnimals());
+//            System.out.println(thisPen.getAllTheBabyAnimals());
+//        }
 //    }
 }

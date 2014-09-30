@@ -13,8 +13,6 @@ public class Zoo {
     public void addPen()
     {
         allThePens.add(new Pen());
-        System.out.println("New animal pen has been set up!");
-        System.out.println();
     }
 
     public ArrayList<Pen> getAllThePens()
@@ -22,6 +20,17 @@ public class Zoo {
         return allThePens;
     }
 
+    public String display()
+    {
+        String ret = new String();
+
+        for(Pen thisPen : allThePens)
+        {
+            ret += thisPen.display();
+        }
+
+        return ret;
+    }
 
 //    public void displayAnimalsInPen()
 //    {
@@ -32,34 +41,5 @@ public class Zoo {
 //        }
 //    }
 //
-//    public void displayAnimalsInZoo()
-//    {
-//       for(Pen thisPen : allThePens)
-//       {
-//           System.out.println(thisPen.getAllTheAnimals());
-//           System.out.println(thisPen.getAllTheBabyAnimals());
-//       }
-//    }
 
-//    public void selectAPen()
-//    {
-//        Scanner zooKeeper = new Scanner(System.in);
-//
-//        for(ArrayList thisPen : allThePens)
-//        {
-//            System.out.println();
-//        }
-//        System.out.print("Pens are listed above by name. Select pen by typing its name: ");
-//        String selectedPen = zooKeeper.nextLine();
-//        zooKeeper.nextLine();
-//
-//        if(selectedPen.equalsIgnoreCase())
-//        {
-//            return allThePens.();
-//        }
-//        else
-//        {
-//            System.out.println("Sorry, that's not a valid pen name.");
-//        }
-//    }
 }
