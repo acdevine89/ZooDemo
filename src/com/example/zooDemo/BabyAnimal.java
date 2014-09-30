@@ -20,4 +20,9 @@ public class BabyAnimal extends Animal {
     public void setHasSiblings(boolean hasSiblings) {
         this.hasSiblings = hasSiblings;
     }
+
+    public String display()
+    {
+        return super.display() + " Has Siblings: " + getHasSiblings();
+    }
 }

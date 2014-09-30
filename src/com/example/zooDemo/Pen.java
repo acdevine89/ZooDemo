@@ -26,4 +26,22 @@ public class Pen {
         return allTheBabyAnimals;
     }
 
+    public String display()
+    {
+        String ret = "Animals: " + getAllTheAnimals().size() + " Baby Animals: " + getAllTheBabyAnimals().size();
+
+        for(Animal thisAnimal : allTheAnimals)
+        {
+            ret += "\n\tAnimal: " + thisAnimal.display();
+        }
+
+        for(BabyAnimal thisBabyAnimal : allTheBabyAnimals)
+        {
+            ret += "\n\tBaby Animal: " + thisBabyAnimal.display();
+
+        }
+
+        return ret;
+    }
+
 }
