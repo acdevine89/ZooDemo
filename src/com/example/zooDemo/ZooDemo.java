@@ -69,11 +69,11 @@ public class ZooDemo {
                     System.out.println(theZoo.display());
                     System.out.println();
                     break;
-//                case 7:
-//                    System.out.println();
-//                    theZoo.displayAnimalsInZoo();
-//                    System.out.println();
-//                    break;
+                case 7:
+                    System.out.println();
+                    System.out.println(theZoo.display());
+                    System.out.println();
+                    break;
                 case 8:
                     quit = true;
                     break;

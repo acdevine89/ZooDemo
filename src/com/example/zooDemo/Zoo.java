@@ -28,7 +28,6 @@ public class Zoo {
         {
             ret += thisPen.display();
         }
-
         return ret;
     }
 
