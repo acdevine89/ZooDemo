@@ -1,9 +1,6 @@
 package com.example.zooDemo;
 import java.util.Scanner;
 
-/**
- * Created by anniedevine on 9/29/14.
- */
 public class ZooDemo {
 
    private static Zoo theZoo = new Zoo();
@@ -66,7 +63,7 @@ public class ZooDemo {
 //                    break;
                 case 6:
                     System.out.println();
-                    System.out.println(theZoo.display());
+                    //System.out.println(theZoo.display());
                     System.out.println();
                     break;
                 case 7:
@@ -95,7 +92,7 @@ public class ZooDemo {
         int i = 1;
         for(Pen thisPen : theZoo.getAllThePens())
         {
-            System.out.println((i) + ": " + thisPen.display());
+            System.out.println("Pen " + (i) + ": " + thisPen.display());
             ++i;
         }
 
@@ -105,6 +102,7 @@ public class ZooDemo {
         return zooKeeperChoice-1;
     }
 
+
     public static void removePen()
     {
         theZoo.getAllThePens().remove(selectAPen());
@@ -112,20 +110,29 @@ public class ZooDemo {
     }
 
 
-    public static void addAnimaltoPen()
+    public static void checkIfPensExist()
+
     {
-        if(theZoo.getAllThePens().size()<=0)
-        {
+        if (theZoo.getAllThePens().size() <= 0) {
             System.out.println("Sorry, no pens. Must add pen first");
             return;
         }
+    }
 
+    public static int checkIfPenValid()
+    {
         int i = selectAPen();
 
         if(i<0)
         {
             System.out.println("Invalid selection.");
+            return;
         }
+    }
+
+    public static void addAnimaltoPen()
+    {
+
 
         Pen thisPen = theZoo.getAllThePens().get(i);
 
@@ -133,6 +140,7 @@ public class ZooDemo {
 
         System.out.print("What is the animal's species? ");
         String animalSpecies = zooKeeper.nextLine();
+        zooKeeper.nextLine();
 
         System.out.print("What is the animal's size? Type 1 for small, 2 for medium, 3 for large: ");
         int animalSize = zooKeeper.nextInt();
@@ -145,47 +153,47 @@ public class ZooDemo {
         System.out.println("Animal has been added to the pen!");
     }
 
-//    public static void addBabyAnimaltoPen()
-//    {
-//        Scanner zooKeeper = new Scanner(System.in);
-//        BabyAnimal newBabyAnimal;
-//
-//        System.out.print("What is the animal's species? ");
-//        String animalSpecies = zooKeeper.nextLine();
-//
-//        System.out.print("What is the animal's size? Type 1 for small, 2 for medium, 3 for large: ");
-//        int animalSize = zooKeeper.nextInt();
-//
-//        System.out.print("What is the animal's gender? ");
-//        String animalGender = zooKeeper.nextLine();
-//
-//        System.out.println("Does the animal have siblings? Type 1 for yes, 2 for no: ");
-//        int siblingsOrNot = zooKeeper.nextInt();
-//        boolean hasSiblings;
-//
-//        if(siblingsOrNot==1)
-//        {
-//            hasSiblings = true;
-//        }
-//
-//        if(siblingsOrNot==2)
-//        {
-//            hasSiblings = false;
-//        }
-//
-//        else
-//        {
-//            System.out.println("That's not a valid response.");
-//        }
-//
-//        newBabyAnimal = new BabyAnimal(hasSiblings, animalSpecies, animalSize, animalGender);
-//        newBabyAnimal.setHasSiblings(hasSiblings);
-//        newBabyAnimal.setSpecies(animalSpecies);
-//        newBabyAnimal.setSize(animalSize);
-//        newBabyAnimal.setGender(animalGender);
-//
-//        System.out.println("Animal has been added to the pen!");
-//    }
+    public static void addBabyAnimaltoPen()
+    {
+        Scanner zooKeeper = new Scanner(System.in);
+        BabyAnimal newBabyAnimal;
+
+        System.out.print("What is the animal's species? ");
+        String animalSpecies = zooKeeper.nextLine();
+
+        System.out.print("What is the animal's size? Type 1 for small, 2 for medium, 3 for large: ");
+        int animalSize = zooKeeper.nextInt();
+
+        System.out.print("What is the animal's gender? ");
+        String animalGender = zooKeeper.nextLine();
+
+        System.out.println("Does the animal have siblings? Type 1 for yes, 2 for no: ");
+        int siblingsOrNot = zooKeeper.nextInt();
+        boolean hasSiblings;
+
+        if(siblingsOrNot==1)
+        {
+            hasSiblings = true;
+        }
+
+        if(siblingsOrNot==2)
+        {
+            hasSiblings = false;
+        }
+
+        else
+        {
+            System.out.println("That's not a valid response.");
+        }
+
+        newBabyAnimal = new BabyAnimal(hasSiblings, animalSpecies, animalSize, animalGender);
+        newBabyAnimal.setHasSiblings(hasSiblings);
+        newBabyAnimal.setSpecies(animalSpecies);
+        newBabyAnimal.setSize(animalSize);
+        newBabyAnimal.setGender(animalGender);
+
+        System.out.println("Animal has been added to the pen!");
+    }
 //
 //    public static void removeAnimalsOrBabyAnimalsFromPen()
 //    {

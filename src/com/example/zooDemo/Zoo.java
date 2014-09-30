@@ -3,12 +3,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Created by anniedevine on 9/29/14.
- */
 public class Zoo {
 
-    private ArrayList<Pen> allThePens = new ArrayList<Pen>();
+    private ArrayList<Pen> allThePens;
+
+    public Zoo()
+    {
+        allThePens = new ArrayList<Pen>();
+    }
 
     public void addPen()
     {
@@ -28,6 +30,7 @@ public class Zoo {
         {
             ret += thisPen.display();
         }
+
         return ret;
     }
 

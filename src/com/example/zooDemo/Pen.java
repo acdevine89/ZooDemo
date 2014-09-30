@@ -2,9 +2,6 @@ package com.example.zooDemo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by anniedevine on 9/29/14.
- */
 public class Pen {
 
     private ArrayList<Animal> allTheAnimals;
@@ -15,7 +12,6 @@ public class Pen {
     {
         allTheAnimals = new ArrayList<Animal>();
         allTheBabyAnimals = new ArrayList<BabyAnimal>();
-        //penName = ;
     }
 
     public ArrayList<Animal> getAllTheAnimals() {
@@ -28,7 +24,7 @@ public class Pen {
 
     public String display()
     {
-        String ret = "Animals: " + getAllTheAnimals().size() + " Baby Animals: " + getAllTheBabyAnimals().size();
+        String ret = "Animals: " + allTheAnimals.size() + " Baby Animals: " + allTheBabyAnimals.size();
 
         for(Animal thisAnimal : allTheAnimals)
         {
@@ -38,7 +34,6 @@ public class Pen {
         for(BabyAnimal thisBabyAnimal : allTheBabyAnimals)
         {
             ret += "\n\tBaby Animal: " + thisBabyAnimal.display();
-
         }
 
         return ret;
