@@ -24,7 +24,7 @@ public class ZooDemo {
         do {
 
             System.out.println("Hello Zookeeper! What would you like to do?");
-            System.out.println("1 - Set up new pen");
+            System.out.println("1 - Add new pen");
             System.out.println("2 - Remove pen");
             System.out.println("3 - Add an animal to a pen");
             System.out.println("4 - Add a baby animal to a pen");
@@ -40,7 +40,7 @@ public class ZooDemo {
             switch (zooKeeperChoice) {
                 case 1:
                     System.out.println();
-                    theZoo.setUpPen();
+                    theZoo.addPen();
                     System.out.println();
                     break;
 //                case 2:
@@ -91,6 +91,8 @@ public class ZooDemo {
         System.out.println("Goodbye!");
         return 0;
     }
+
+
 
     public static void addAnimaltoPen()
     {

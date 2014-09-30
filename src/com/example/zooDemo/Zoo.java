@@ -10,7 +10,7 @@ public class Zoo {
 
     ArrayList<Pen> allThePens = new ArrayList<Pen>();
 
-    public void setUpPen()
+    public void addPen()
     {
         allThePens.add(new Pen());
         System.out.println("New animal pen has been set up!");
@@ -19,7 +19,16 @@ public class Zoo {
 
     public void removePen(int index)
     {
-        allThePens.remove(index);
+        for(Pen thisPen : allThePens)
+        {
+            for(int i = 0; i<allThePens.size(); i++) {
+                System.out.println((i+1) + thisPen.display());
+            }
+        }
+
+        System.out.print("Which pen would you like to remove? Type the number here: ");
+
+        allThePens.remove(i);
     }
 
     public ArrayList<Pen> getAllThePens()
