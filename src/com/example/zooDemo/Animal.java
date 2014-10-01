@@ -13,6 +13,11 @@ public class Animal {
         this.gender = gender;
     }
 
+    public Animal()
+    {
+
+    }
+
     public String getSpecies() {
         return species;
     }

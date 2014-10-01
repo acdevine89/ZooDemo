@@ -10,6 +10,11 @@ public class BabyAnimal extends Animal {
         this.hasSiblings = hasSiblings;
     }
 
+    public BabyAnimal()
+    {
+
+    }
+
     public boolean getHasSiblings() {
         return hasSiblings;
     }
