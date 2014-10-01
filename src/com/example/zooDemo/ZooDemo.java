@@ -63,7 +63,7 @@ public class ZooDemo {
                     break;
                 case 6:
                     System.out.println();
-                    //System.out.println(theZoo.display());
+                    displayAnimalsInPen();
                     System.out.println();
                     break;
                 case 7:
@@ -98,7 +98,7 @@ public class ZooDemo {
         int i = 1;
         for(Pen thisPen : theZoo.getAllThePens())
         {
-            System.out.println("Pen " + (i) + ": " + thisPen.display());
+            System.out.println("Pen " + (i) + ": " + thisPen.displayNumberOfAnimalsInPen());
             ++i;
         }
 
@@ -106,7 +106,7 @@ public class ZooDemo {
         System.out.print("Which pen would you like to use? Type the number here: ");
         int zooKeeperChoice = zooKeeper.nextInt();
 
-        if(zooKeeperChoice<1 || zooKeeperChoice>theZoo.getAllThePens().size())
+        if(zooKeeperChoice<1 || (zooKeeperChoice>theZoo.getAllThePens().size()))
         {
             System.out.println("Invalid selection.");
             return null;
@@ -131,11 +131,11 @@ public class ZooDemo {
         thisAnimal.setSpecies(zooKeeper.nextLine());
 
         System.out.print("What is the animal's size? Type 1 for small, 2 for medium, 3 for large: ");
-        thisAnimal.setSize(zooKeeper.nextInt());
+        thisAnimal.setSize(Integer.parseInt(zooKeeper.nextLine()));
 
         System.out.print("What is the animal's gender? ");
-        thisAnimal.setGender(zooKeeper.nextLine());
-        zooKeeper.nextLine();
+        String gender = zooKeeper.nextLine();
+        thisAnimal.setGender(gender);
     }
 
     public static void addAnimalToPen()
@@ -163,8 +163,6 @@ public class ZooDemo {
         }
         BabyAnimal thisAnimal = new BabyAnimal();
         getAnimalInfo(thisAnimal);
-
-        thePen.getAllTheBabyAnimals().add(thisAnimal);
 
         System.out.println("Does the animal have siblings? Type 1 for yes, 2 for no: ");
         int siblingsOrNot = zooKeeper.nextInt();
@@ -202,8 +200,6 @@ public class ZooDemo {
             return;
         }
 
-
-
         Animal thisAnimal = new Animal();
         getAnimalInfo(thisAnimal);
 
@@ -211,12 +207,15 @@ public class ZooDemo {
         System.out.println("Animal has been removed from the pen!");
     }
 
-//    public static void displayAnimalsInZoo()
-//    {
-//        for(Pen thisPen : allThePens)
-//        {
-//            System.out.println(thisPen.getAllTheAnimals());
-//            System.out.println(thisPen.getAllTheBabyAnimals());
-//        }
-//    }
+    public static void displayAnimalsInPen()
+    {
+        Pen thePen = selectAPen();
+        if(thePen==null)
+        {
+            return;
+        }
+
+        thePen.displayAnimalsInPen();
+
+    }
 }

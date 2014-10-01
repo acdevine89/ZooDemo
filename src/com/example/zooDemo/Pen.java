@@ -22,22 +22,28 @@ public class Pen {
         return allTheBabyAnimals;
     }
 
-    public String display()
+    public String displayNumberOfAnimalsInPen()
     {
         String ret = allTheAnimals.size() + " Animals, " + allTheBabyAnimals.size() + " Baby Animals";
 
+        return ret;
+    }
+
+    public String displayAnimalsInPen()
+    {
+        String ret;
+
+        int i = 1;
         for(Animal thisAnimal : allTheAnimals)
         {
-            int i = 1;
-            ret += "\n\tAnimal #" + i + thisAnimal.display();
-            i++;
+            ret += "\n\tAnimal #" + i + " - " + thisAnimal.display();
+            ++i;
         }
 
         for(BabyAnimal thisBabyAnimal : allTheBabyAnimals)
         {
-            int i = 1;
-            ret += "\n\tBaby Animal #" + i + thisBabyAnimal.display();
-            i++;
+            ret += "\n\tBaby Animal #" + i + " - " + thisBabyAnimal.display();
+            ++i;
         }
 
         return ret;
