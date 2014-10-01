@@ -24,16 +24,20 @@ public class Pen {
 
     public String display()
     {
-        String ret = "Animals: " + allTheAnimals.size() + " Baby Animals: " + allTheBabyAnimals.size();
+        String ret = allTheAnimals.size() + " Animals, " + allTheBabyAnimals.size() + " Baby Animals";
 
         for(Animal thisAnimal : allTheAnimals)
         {
-            ret += "\n\tAnimal: " + thisAnimal.display();
+            int i = 1;
+            ret += "\n\tAnimal #" + i + thisAnimal.display();
+            i++;
         }
 
         for(BabyAnimal thisBabyAnimal : allTheBabyAnimals)
         {
-            ret += "\n\tBaby Animal: " + thisBabyAnimal.display();
+            int i = 1;
+            ret += "\n\tBaby Animal #" + i + thisBabyAnimal.display();
+            i++;
         }
 
         return ret;

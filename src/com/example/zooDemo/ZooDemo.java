@@ -201,12 +201,14 @@ public class ZooDemo {
         {
             return;
         }
+
+
+
         Animal thisAnimal = new Animal();
         getAnimalInfo(thisAnimal);
 
         thePen.getAllTheAnimals().remove(thisAnimal);
-        System.out.println("Animal has been added to the pen!");
-
+        System.out.println("Animal has been removed from the pen!");
     }
 
 //    public static void displayAnimalsInZoo()
